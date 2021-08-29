@@ -29,6 +29,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainTabs = new MetroFramework.Controls.MetroTabControl();
             this.WelcomeTab = new MetroFramework.Controls.MetroTabPage();
             this.welcomeInfoLbl = new MetroFramework.Controls.MetroLabel();
@@ -54,6 +55,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
             this.InjectorLogo = new MetroFramework.Controls.MetroPanel();
             this.botDivPnl = new MetroFramework.Controls.MetroPanel();
             this.midDivPnl = new MetroFramework.Controls.MetroPanel();
+            this.ToolTipMngr = new MetroFramework.Components.MetroToolTip();
             this.MainTabs.SuspendLayout();
             this.WelcomeTab.SuspendLayout();
             this.InstallPathTab.SuspendLayout();
@@ -70,7 +72,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
             this.MainTabs.ItemSize = new System.Drawing.Size(130, 1);
             this.MainTabs.Location = new System.Drawing.Point(318, 54);
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(527, 397);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.Style = MetroFramework.MetroColorStyle.Red;
@@ -156,6 +158,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
             this.DesktopShortcutCheckBox.TabIndex = 9;
             this.DesktopShortcutCheckBox.Text = "Desktop Shortcut";
             this.DesktopShortcutCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipMngr.SetToolTip(this.DesktopShortcutCheckBox, "Whether to create a shortcut on the Desktop");
             this.DesktopShortcutCheckBox.UseSelectable = true;
             // 
             // BrowseBtn
@@ -167,6 +170,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
             this.BrowseBtn.TabIndex = 5;
             this.BrowseBtn.Text = "Browse";
             this.BrowseBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipMngr.SetToolTip(this.BrowseBtn, "Lets you browse for the installation path");
             this.BrowseBtn.UseSelectable = true;
             this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtnClicked);
             // 
@@ -331,6 +335,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
             this.LaunchCheckBox.TabIndex = 8;
             this.LaunchCheckBox.Text = "Launch Minecraft: Wii U Mod Injector";
             this.LaunchCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipMngr.SetToolTip(this.LaunchCheckBox, "Whether to launch the Mod Injector once the setup closes");
             this.LaunchCheckBox.UseSelectable = true;
             // 
             // nowInstalledLbl
@@ -369,6 +374,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
             this.CancelCloseBtn.TabIndex = 1;
             this.CancelCloseBtn.Text = "Cancel";
             this.CancelCloseBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipMngr.SetToolTip(this.CancelCloseBtn, "Cancels the installation");
             this.CancelCloseBtn.UseSelectable = true;
             this.CancelCloseBtn.Click += new System.EventHandler(this.CancelCloseBtnClicked);
             // 
@@ -381,6 +387,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
             this.NextBtn.TabIndex = 2;
             this.NextBtn.Text = "Next >";
             this.NextBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipMngr.SetToolTip(this.NextBtn, "Continue to the next page");
             this.NextBtn.UseSelectable = true;
             this.NextBtn.Click += new System.EventHandler(this.NextBtnClicked);
             // 
@@ -393,6 +400,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
             this.BackBtn.TabIndex = 3;
             this.BackBtn.Text = "< Back";
             this.BackBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipMngr.SetToolTip(this.BackBtn, "Revert to the previous page");
             this.BackBtn.UseSelectable = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtnClicked);
             // 
@@ -465,6 +473,12 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
             this.midDivPnl.VerticalScrollbarHighlightOnWheel = false;
             this.midDivPnl.VerticalScrollbarSize = 10;
             // 
+            // ToolTipMngr
+            // 
+            this.ToolTipMngr.Style = MetroFramework.MetroColorStyle.Red;
+            this.ToolTipMngr.StyleManager = null;
+            this.ToolTipMngr.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,6 +492,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
             this.Controls.Add(this.NextBtn);
             this.Controls.Add(this.CancelCloseBtn);
             this.Controls.Add(this.MainTabs);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Red;
@@ -523,6 +538,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
         public MetroFramework.Controls.MetroLabel nowInstalledLbl;
         public MetroFramework.Controls.MetroCheckBox LaunchCheckBox;
         public MetroFramework.Controls.MetroCheckBox DesktopShortcutCheckBox;
+        private MetroFramework.Components.MetroToolTip ToolTipMngr;
     }
 }
 

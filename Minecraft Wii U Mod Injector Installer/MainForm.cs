@@ -103,8 +103,7 @@ namespace Minecraft_Wii_U_Mod_Injector_Installer
             if (MainTabs.SelectedIndex == 2)
                 _downloader.CancelDownload();
 
-            if (MainTabs.SelectedIndex == 3)
-                Environment.Exit(0);
+            Environment.Exit(0);
         }
     }
 }
